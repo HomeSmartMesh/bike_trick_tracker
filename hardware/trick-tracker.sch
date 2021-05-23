@@ -4,9 +4,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
+Title "Trick Tracker"
+Date "2021-05-23"
+Rev "v1.0"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -1517,4 +1517,66 @@ Wire Wire Line
 Connection ~ 8550 3700
 Wire Wire Line
 	8550 3700 9100 3700
+Text Notes 9100 5100 0    50   ~ 0
+BATT_SENS
+Text Notes 7400 5100 0    50   ~ 0
+QWiiC I2C Connector
+Text Notes 7400 3450 0    50   ~ 0
+LDO
+Text Notes 8150 600  0    50   ~ 0
+Charging IC
+Text Notes 5400 5250 0    50   ~ 0
+Pull-Ups
+Text Notes 4250 5250 0    50   ~ 0
+Mounting Holes
+Text Notes 4250 6450 0    50   ~ 0
+Buttons
+Text Notes 550  5300 0    50   ~ 0
+USB-C
+Text Notes 550  3850 0    50   ~ 0
+Micro SD-Card
+Text Notes 3750 3500 0    50   ~ 0
+Pressure Sensor
+Text Notes 3750 600  0    50   ~ 0
+9-Axis Sensor
+Text Notes 550  600  0    50   ~ 0
+MCU
+$Comp
+L Connector:Conn_01x04_Male J?
+U 1 1 60AB9726
+P 3000 3200
+F 0 "J?" H 3108 3481 50  0000 C CNN
+F 1 "Debug" H 3108 3390 50  0000 C CNN
+F 2 "" H 3000 3200 50  0001 C CNN
+F 3 "~" H 3000 3200 50  0001 C CNN
+	1    3000 3200
+	1    0    0    -1  
+$EndComp
+Text Label 3600 3100 2    50   ~ 0
+SWDCLK
+Text Label 3600 3200 2    50   ~ 0
+SWDIO
+$Comp
+L power:GND #PWR?
+U 1 1 60AB9E9C
+P 3500 3450
+F 0 "#PWR?" H 3500 3200 50  0001 C CNN
+F 1 "GND" H 3505 3277 50  0000 C CNN
+F 2 "" H 3500 3450 50  0001 C CNN
+F 3 "" H 3500 3450 50  0001 C CNN
+	1    3500 3450
+	1    0    0    -1  
+$EndComp
+Text Label 3600 3300 2    50   ~ 0
+3.3V
+Wire Wire Line
+	3200 3100 3600 3100
+Wire Wire Line
+	3600 3200 3200 3200
+Wire Wire Line
+	3200 3300 3600 3300
+Wire Wire Line
+	3500 3450 3500 3400
+Wire Wire Line
+	3500 3400 3200 3400
 $EndSCHEMATC
