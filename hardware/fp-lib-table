@@ -1,0 +1,9 @@
+(fp_lib_table
+  (lib (name MS88SF2)(type KiCad)(uri ${KIPRJMOD}/components/MS88SF2/MS88SF2.pretty)(options "")(descr ""))
+  (lib (name DPS368XTSA1)(type KiCad)(uri ${KIPRJMOD}/components/DPS368XTSA1)(options "")(descr ""))
+  (lib (name USB4105-GF-A)(type KiCad)(uri ${KIPRJMOD}/components/USB4105-GF-A)(options "")(descr ""))
+  (lib (name JST_PH_S2B_THRU)(type KiCad)(uri ${KIPRJMOD}/components/JST_PH_S2B_THRU)(options "")(descr ""))
+  (lib (name APHF1608LSEEQBDZGKC)(type Legacy)(uri ${KIPRJMOD}/components/APHF1608LSEEQBDZGKC/KiCad/APHF1608LSEEQBDZGKC.mod)(options "")(descr ""))
+  (lib (name EVQ-PUA02K)(type Legacy)(uri ${KIPRJMOD}/components/EVQ-PUA02K/KiCad/EVQ-PUA02K.mod)(options "")(descr ""))
+  (lib (name 450405020524)(type Legacy)(uri ${KIPRJMOD}/components/450405020524/KiCad/450405020524.mod)(options "")(descr ""))
+)
