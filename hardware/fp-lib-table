@@ -7,4 +7,6 @@
   (lib (name EVQ-PUA02K)(type Legacy)(uri ${KIPRJMOD}/components/EVQ-PUA02K/KiCad/EVQ-PUA02K.mod)(options "")(descr ""))
   (lib (name 450405020524)(type Legacy)(uri ${KIPRJMOD}/components/450405020524/KiCad/450405020524.mod)(options "")(descr ""))
   (lib (name MEM2051-00-195-00-A)(type KiCad)(uri ${KIPRJMOD}/components/MEM2051-00-195-00-A)(options "")(descr ""))
+  (lib (name SMTB-1240-S-R)(type KiCad)(uri ${KIPRJMOD}/components/SMTB-1240-S-R/SMTB-1240-S-R.pretty)(options "")(descr ""))
+  (lib (name BMX055)(type Legacy)(uri ${KIPRJMOD}/components/BMX055/KiCad/BMX055.mod)(options "")(descr ""))
 )

@@ -7,4 +7,6 @@
   (lib (name 450405020524)(type Legacy)(uri ${KIPRJMOD}/components/450405020524/KiCad/450405020524.lib)(options "")(descr ""))
   (lib (name MEM2051-00-195-00-A)(type Legacy)(uri ${KIPRJMOD}/components/MEM2051-00-195-00-A/MEM2051-00-195-00-A.lib)(options "")(descr ""))
   (lib (name NSR0320XV6T1G)(type Legacy)(uri ${KIPRJMOD}/components/NSR0320XV6T1G/NSR0320XV6T1G.lib)(options "")(descr ""))
+  (lib (name SMTB-1240-S-R)(type Legacy)(uri ${KIPRJMOD}/components/SMTB-1240-S-R/SMTB-1240-S-R.lib)(options "")(descr ""))
+  (lib (name BMX055)(type Legacy)(uri ${KIPRJMOD}/components/BMX055/KiCad/BMX055.lib)(options "")(descr ""))
 )
