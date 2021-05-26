@@ -1,5 +1,5 @@
 
-(module GCT_USB4105-GF-A (layer F.Cu) (tedit 60A91C65)
+(module GCT_USB4105-GF-A (layer F.Cu) (tedit 60AE8A1C)
   (descr "")
   (fp_text reference REF** (at -1.825 -8.135 0) (layer F.SilkS)
     (effects (font (size 1.0 1.0) (thickness 0.015)))
