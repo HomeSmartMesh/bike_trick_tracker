@@ -43,11 +43,6 @@ F 0 "U2" H 5600 4767 50  0000 C CNN
 F 1 "DPS368XTSA1" H 5600 4676 50  0000 C CNN
 F 2 "DPS368XTSA1:XDCR_DPS368XTSA1" H 5600 4200 50  0001 L BNN
 F 3 "VFLGA-8 Infineon Technologies" H 5600 4200 50  0001 L BNN
-F 4 "Infineon Technologies" H 5600 4200 50  0001 L BNN "Field4"
-F 5 "None" H 5600 4200 50  0001 L BNN "Field5"
-F 6 "Unavailable" H 5600 4200 50  0001 L BNN "Field6"
-F 7 "DPS368XTSA1" H 5600 4200 50  0001 L BNN "Field7"
-F 8 "Package dimensions: 8-pin LGA, 2.0 x 2.5 x 1.1 mm3 | Operation range: Pressure: 3001200 hPa Temperature: -4085C | Precision: 0.002 hPa _or 0.02 m_ | Rel. accuracy: 0.06 hPa _or 0.5 m_ | Abs. accuracy: 1 hPa _or 8 m_ | Temperature accuracy: 0.5C | Avg. current consumption: 1.7 A_pressure measurement_ @1Hzsampling rate, standby: 0.5 A. | Integrated FIFO | Interface: I2C and SPI_both with optional interrupt_" H 5600 4200 50  0001 L BNN "Field8"
 	1    5600 4200
 	1    0    0    -1  
 $EndComp
@@ -70,10 +65,7 @@ F 0 "J1" H 2300 6717 50  0000 C CNN
 F 1 "USB4105-GF-A" H 2300 6626 50  0000 C CNN
 F 2 "USB4105-GF-A:GCT_USB4105-GF-A" H 2300 6050 50  0001 L BNN
 F 3 "" H 2300 6050 50  0001 L BNN
-F 4 "A3" H 2300 6050 50  0001 L BNN "PARTREV"
-F 5 "3.31 mm" H 2300 6050 50  0001 L BNN "MAXIMUM_PACKAGE_HEIGHT"
-F 6 "Manufacturer Recommendations" H 2300 6050 50  0001 L BNN "STANDARD"
-F 7 "GCT" H 2300 6050 50  0001 L BNN "MANUFACTURER"
+F 4 "TYPE-C-31-M-12" H 2300 6100 50  0001 C CNN "Alternative"
 	1    2300 6050
 	1    0    0    -1  
 $EndComp
@@ -1011,13 +1003,6 @@ F 1 "EVQ-PUA02K" H 5550 6924 50  0000 C CNN
 F 2 "EVQ-PUA02K:EVQPUA02K" H 6000 6850 50  0001 L CNN
 F 3 "https://www.mouser.in/ProductDetail/Panasonic/EVQ-PUA02K?qs=%2Fha2pyFadujMSX8lHuHLeTqtnZtxLpuLygd0%252BejhC2g%3D" H 6000 6750 50  0001 L CNN
 F 4 "Tactile Switches SIDE PUSH 2.2NF 4.7x3.2x1.65mm" H 6000 6650 50  0001 L CNN "Description"
-F 5 "1.95" H 6000 6550 50  0001 L CNN "Height"
-F 6 "Panasonic" H 6000 6450 50  0001 L CNN "Manufacturer_Name"
-F 7 "EVQ-PUA02K" H 6000 6350 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "667-EVQ-PUA02K" H 6000 6250 50  0001 L CNN "Mouser Part Number"
-F 9 "https://www.mouser.co.uk/ProductDetail/Panasonic/EVQ-PUA02K?qs=whhzBCqEXCvFsgipcL1tig%3D%3D" H 6000 6150 50  0001 L CNN "Mouser Price/Stock"
-F 10 "EVQ-PUA02K" H 6000 6050 50  0001 L CNN "Arrow Part Number"
-F 11 "https://www.arrow.com/en/products/evq-pua02k/panasonic" H 6000 5950 50  0001 L CNN "Arrow Price/Stock"
 	1    4950 6750
 	1    0    0    -1  
 $EndComp
@@ -1030,13 +1015,6 @@ F 1 "EVQ-PUA02K" H 5550 7574 50  0000 C CNN
 F 2 "EVQ-PUA02K:EVQPUA02K" H 6000 7500 50  0001 L CNN
 F 3 "https://www.mouser.in/ProductDetail/Panasonic/EVQ-PUA02K?qs=%2Fha2pyFadujMSX8lHuHLeTqtnZtxLpuLygd0%252BejhC2g%3D" H 6000 7400 50  0001 L CNN
 F 4 "Tactile Switches SIDE PUSH 2.2NF 4.7x3.2x1.65mm" H 6000 7300 50  0001 L CNN "Description"
-F 5 "1.95" H 6000 7200 50  0001 L CNN "Height"
-F 6 "Panasonic" H 6000 7100 50  0001 L CNN "Manufacturer_Name"
-F 7 "EVQ-PUA02K" H 6000 7000 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "667-EVQ-PUA02K" H 6000 6900 50  0001 L CNN "Mouser Part Number"
-F 9 "https://www.mouser.co.uk/ProductDetail/Panasonic/EVQ-PUA02K?qs=whhzBCqEXCvFsgipcL1tig%3D%3D" H 6000 6800 50  0001 L CNN "Mouser Price/Stock"
-F 10 "EVQ-PUA02K" H 6000 6700 50  0001 L CNN "Arrow Part Number"
-F 11 "https://www.arrow.com/en/products/evq-pua02k/panasonic" H 6000 6600 50  0001 L CNN "Arrow Price/Stock"
 	1    4950 7400
 	1    0    0    -1  
 $EndComp
@@ -1172,7 +1150,7 @@ U 1 1 60AC3A3C
 P 4550 5450
 F 0 "H1" H 4650 5496 50  0000 L CNN
 F 1 "MountingHole" H 4650 5405 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm" H 4550 5450 50  0001 C CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 4550 5450 50  0001 C CNN
 F 3 "~" H 4550 5450 50  0001 C CNN
 	1    4550 5450
 	1    0    0    -1  
@@ -1183,7 +1161,7 @@ U 1 1 60AC3F3D
 P 4550 5700
 F 0 "H2" H 4650 5746 50  0000 L CNN
 F 1 "MountingHole" H 4650 5655 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm" H 4550 5700 50  0001 C CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 4550 5700 50  0001 C CNN
 F 3 "~" H 4550 5700 50  0001 C CNN
 	1    4550 5700
 	1    0    0    -1  
@@ -1198,12 +1176,6 @@ F 2 "450405020524:450405020524" H 8800 4550 50  0001 L CNN
 F 3 "https://www.we-online.com/catalog/datasheet/450405020524.pdf" H 8800 4450 50  0001 L CNN
 F 4 "Slide Switches WS-SLSU Mini Slide Switch" H 8800 4350 50  0001 L CNN "Description"
 F 5 "2.25" H 8800 4250 50  0001 L CNN "Height"
-F 6 "Wurth Elektronik" H 8800 4150 50  0001 L CNN "Manufacturer_Name"
-F 7 "450405020524" H 8800 4050 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "710-450405020524" H 8800 3950 50  0001 L CNN "Mouser Part Number"
-F 9 "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/450405020524/?qs=OlC7AqGiEDnl%252BU2cnq%252B3rQ%3D%3D" H 8800 3850 50  0001 L CNN "Mouser Price/Stock"
-F 10 "" H 8800 3750 50  0001 L CNN "Arrow Part Number"
-F 11 "" H 8800 3650 50  0001 L CNN "Arrow Price/Stock"
 	1    7950 4450
 	1    0    0    -1  
 $EndComp
@@ -1307,7 +1279,6 @@ F 0 "J4" H 2150 5067 50  0000 C CNN
 F 1 "MEM2061-01-188-00-A" H 2150 4976 50  0000 C CNN
 F 2 "MEM2061-01-188-00-A_REVA:GCT_MEM2061-01-188-00-A_REVA" H 2150 4500 50  0001 L BNN
 F 3 "" H 2150 4500 50  0001 L BNN
-F 4 "GCT" H 2150 4500 50  0001 L BNN "MANUFACTURER"
 	1    2150 4500
 	1    0    0    -1  
 $EndComp
@@ -1467,7 +1438,7 @@ U 1 1 60CAC34F
 P 4550 5950
 F 0 "H3" H 4650 5996 50  0000 L CNN
 F 1 "MountingHole" H 4650 5905 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm" H 4550 5950 50  0001 C CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 4550 5950 50  0001 C CNN
 F 3 "~" H 4550 5950 50  0001 C CNN
 	1    4550 5950
 	1    0    0    -1  
@@ -1478,7 +1449,7 @@ U 1 1 60CAC5B0
 P 4550 6200
 F 0 "H4" H 4650 6246 50  0000 L CNN
 F 1 "MountingHole" H 4650 6155 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm" H 4550 6200 50  0001 C CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 4550 6200 50  0001 C CNN
 F 3 "~" H 4550 6200 50  0001 C CNN
 	1    4550 6200
 	1    0    0    -1  
