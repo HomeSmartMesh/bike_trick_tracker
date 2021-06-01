@@ -1531,8 +1531,6 @@ Wire Wire Line
 	3200 3250 3600 3250
 Wire Wire Line
 	3500 3500 3500 3450
-Wire Wire Line
-	3500 3450 3200 3450
 $Comp
 L SMTB-1240-S-R:SMTB-1240-S-R P1
 U 1 1 60ACE7E7
@@ -1675,12 +1673,12 @@ $EndComp
 $Comp
 L Connector:TestPoint TP6
 U 1 1 60ADFDB3
-P 3200 3450
-F 0 "TP6" V 3100 3600 50  0000 C CNN
-F 1 "TP_GND" V 3200 3800 50  0000 C CNN
-F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 3400 3450 50  0001 C CNN
-F 3 "~" H 3400 3450 50  0001 C CNN
-	1    3200 3450
+P 2750 3350
+F 0 "TP6" V 2650 3500 50  0000 C CNN
+F 1 "TP_GND" V 2750 3700 50  0000 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 2950 3350 50  0001 C CNN
+F 3 "~" H 2950 3350 50  0001 C CNN
+	1    2750 3350
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -1713,4 +1711,78 @@ Wire Wire Line
 	1050 3250 900  3250
 Wire Wire Line
 	1050 3450 900  3450
+$Comp
+L Connector:TestPoint TP7
+U 1 1 60B4C6F1
+P 2750 3550
+F 0 "TP7" V 2650 3700 50  0000 C CNN
+F 1 "TP_GND" V 2750 3900 50  0000 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 2950 3550 50  0001 C CNN
+F 3 "~" H 2950 3550 50  0001 C CNN
+	1    2750 3550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2850 3450 2850 3550
+Wire Wire Line
+	2850 3550 2750 3550
+Wire Wire Line
+	2850 3450 3500 3450
+Wire Wire Line
+	2750 3350 2850 3350
+Wire Wire Line
+	2850 3350 2850 3450
+Connection ~ 2850 3450
+$Comp
+L Connector:Conn_01x08_Male J5
+U 1 1 60B6B637
+P -1050 3250
+F 0 "J5" H -942 3731 50  0000 C CNN
+F 1 "Conn_01x08_Male" H -942 3640 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x04_P2.54mm_Vertical_SMD" H -1050 3250 50  0001 C CNN
+F 3 "~" H -1050 3250 50  0001 C CNN
+	1    -1050 3250
+	1    0    0    -1  
+$EndComp
+Text Label -400 2950 2    50   ~ 0
+SWDCLK
+Text Label -400 3150 2    50   ~ 0
+SWDIO
+Text Label -400 3350 2    50   ~ 0
+3.3V
+$Comp
+L power:GND #PWR0136
+U 1 1 60B7C7CE
+P -400 3700
+F 0 "#PWR0136" H -400 3450 50  0001 C CNN
+F 1 "GND" H -395 3527 50  0000 C CNN
+F 2 "" H -400 3700 50  0001 C CNN
+F 3 "" H -400 3700 50  0001 C CNN
+	1    -400 3700
+	1    0    0    -1  
+$EndComp
+Text Label -400 3050 2    50   ~ 0
+Rx
+Text Label -400 3250 2    50   ~ 0
+Tx
+Wire Wire Line
+	-850 3450 -400 3450
+Wire Wire Line
+	-400 3450 -400 3650
+Wire Wire Line
+	-850 3650 -400 3650
+Connection ~ -400 3650
+Wire Wire Line
+	-400 3650 -400 3700
+Wire Wire Line
+	-400 2950 -850 2950
+Wire Wire Line
+	-850 3050 -400 3050
+Wire Wire Line
+	-400 3150 -850 3150
+Wire Wire Line
+	-850 3250 -400 3250
+Wire Wire Line
+	-400 3350 -850 3350
+NoConn ~ -850 3550
 $EndSCHEMATC
