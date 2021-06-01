@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BMX160
+D IMUs - Inertial Measurement Units 9-axis (9DOF) Absolute Orientation MEMS Sensor
+F http://www.mouser.com/datasheet/2/783/BST-BMX160-DS000-11-1480547.pdf
+$ENDCMP
+#
+#End Doc Library

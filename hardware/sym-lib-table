@@ -11,4 +11,5 @@
   (lib (name BMX055)(type Legacy)(uri ${KIPRJMOD}/components/BMX055/KiCad/BMX055.lib)(options "")(descr ""))
   (lib (name IP4220CZ6)(type Legacy)(uri ${KIPRJMOD}/components/IP4220CZ6/IP4220CZ6.lib)(options "")(descr ""))
   (lib (name MEM2061-01-188-00-A_REVA)(type Legacy)(uri ${KIPRJMOD}/components/MEM2061-01-188-00-A_REVA/MEM2061-01-188-00-A_REVA.lib)(options "")(descr ""))
+  (lib (name BMX160)(type Legacy)(uri ${KIPRJMOD}/components/BMX160/KiCad/BMX160.lib)(options "")(descr ""))
 )

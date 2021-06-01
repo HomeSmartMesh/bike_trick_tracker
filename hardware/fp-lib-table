@@ -13,4 +13,5 @@
   (lib (name MEM2061-01-188-00-A_REVA)(type KiCad)(uri ${KIPRJMOD}/components/MEM2061-01-188-00-A_REVA)(options "")(descr ""))
   (lib (name usb_c)(type KiCad)(uri ${KIPRJMOD}/components/USB-C/usb_c.pretty)(options "")(descr ""))
   (lib (name logo)(type KiCad)(uri ${KIPRJMOD}/components/logo)(options "")(descr ""))
+  (lib (name BMX160)(type Legacy)(uri ${KIPRJMOD}/components/BMX160/KiCad/BMX160.mod)(options "")(descr ""))
 )
