@@ -439,19 +439,6 @@ Wire Wire Line
 Connection ~ 1600 3400
 Wire Wire Line
 	1600 3400 1550 3400
-Text Label 700  1100 0    50   ~ 0
-3.3V
-Wire Wire Line
-	1050 1150 1000 1150
-Wire Wire Line
-	1050 1050 1000 1050
-Wire Wire Line
-	1000 1050 1000 1100
-Wire Wire Line
-	700  1100 1000 1100
-Connection ~ 1000 1100
-Wire Wire Line
-	1000 1100 1000 1150
 $Comp
 L Device:D_Schottky D1
 U 1 1 60B07CC4
@@ -969,8 +956,9 @@ U 1 1 60AB1D56
 P 2150 4500
 F 0 "J4" H 2150 5067 50  0000 C CNN
 F 1 "MEM2061-01-188-00-A" H 2150 4976 50  0000 C CNN
-F 2 "MEM2061-01-188-00-A_REVA:GCT_MEM2061-01-188-00-A_REVA" H 2150 4500 50  0001 L BNN
+F 2 "GCT_MEM2051-00-195-00-A" H 2150 4500 50  0001 L BNN
 F 3 "" H 2150 4500 50  0001 L BNN
+F 4 "GCT" H 2150 4500 50  0001 C CNN "MANUFACTURER"
 	1    2150 4500
 	1    0    0    -1  
 $EndComp
@@ -1022,43 +1010,27 @@ F 3 "~" V 10150 2900 50  0001 C CNN
 	1    10150 2900
 	1    0    0    -1  
 $EndComp
-Text Label 3050 4200 2    50   ~ 0
+Text Label 3050 4500 2    50   ~ 0
 3.3V
-Wire Wire Line
-	3050 4200 2750 4200
-Text Label 1150 4200 0    50   ~ 0
+Text Label 3050 4200 2    50   ~ 0
 MISO
-Text Label 1150 4600 0    50   ~ 0
+Text Label 3050 4700 2    50   ~ 0
 MOSI
-Text Label 1150 4800 0    50   ~ 0
+Text Label 3050 4400 2    50   ~ 0
 SCK
-NoConn ~ 1550 4300
-NoConn ~ 1550 4400
-Text Label 1150 4500 0    50   ~ 0
+Text Label 3050 4800 2    50   ~ 0
 CS
 $Comp
 L power:GND #PWR0130
 U 1 1 60AF2CE9
-P 2800 4850
-F 0 "#PWR0130" H 2800 4600 50  0001 C CNN
-F 1 "GND" H 2805 4677 50  0000 C CNN
-F 2 "" H 2800 4850 50  0001 C CNN
-F 3 "" H 2800 4850 50  0001 C CNN
-	1    2800 4850
+P 3250 4750
+F 0 "#PWR0130" H 3250 4500 50  0001 C CNN
+F 1 "GND" H 3255 4577 50  0000 C CNN
+F 2 "" H 3250 4750 50  0001 C CNN
+F 3 "" H 3250 4750 50  0001 C CNN
+	1    3250 4750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2800 4850 2800 4800
-Wire Wire Line
-	2800 4800 2750 4800
-Wire Wire Line
-	1550 4800 1150 4800
-Wire Wire Line
-	1150 4600 1550 4600
-Wire Wire Line
-	1550 4500 1150 4500
-Wire Wire Line
-	1150 4200 1550 4200
 $Comp
 L Device:R_Small R7
 U 1 1 60B2E96D
@@ -1106,10 +1078,8 @@ Text Label 2650 2850 2    50   ~ 0
 SCK
 Wire Wire Line
 	2650 2850 2150 2850
-Text Label 3250 4700 2    50   ~ 0
+Text Label 1050 4300 0    50   ~ 0
 SD_DETECT
-Wire Wire Line
-	3250 4700 2750 4700
 Text Label 2650 2250 2    50   ~ 0
 SD_DETECT
 Wire Notes Line
@@ -1577,4 +1547,95 @@ Wire Wire Line
 Connection ~ 4350 1850
 Wire Wire Line
 	4350 1850 4350 1950
+Wire Wire Line
+	700  1050 1050 1050
+$Comp
+L Device:Q_PMOS_DGS Q1
+U 1 1 6166D587
+P 3450 2950
+F 0 "Q1" V 3792 2950 50  0000 C CNN
+F 1 "Q_PMOS_DGS" V 3701 2950 50  0000 C CNN
+F 2 "" H 3650 3050 50  0001 C CNN
+F 3 "~" H 3450 2950 50  0001 C CNN
+	1    3450 2950
+	0    -1   -1   0   
+$EndComp
+Text Label 3000 2850 0    50   ~ 0
+3.3V
+Wire Wire Line
+	3000 2850 3250 2850
+Text Label 4050 2850 2    50   ~ 0
+3.3V_nRF
+Wire Wire Line
+	4050 2850 3650 2850
+Text Label 3000 3150 0    50   ~ 0
+VBUS
+Text Label 700  1150 0    50   ~ 0
+VBUS
+Wire Wire Line
+	1050 1150 700  1150
+Wire Wire Line
+	3000 3150 3450 3150
+$Comp
+L Device:R_Small R8
+U 1 1 616A1F0D
+P 3450 3300
+F 0 "R8" V 3646 3300 50  0000 C CNN
+F 1 "10k" V 3555 3300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 3450 3300 50  0001 C CNN
+F 3 "~" H 3450 3300 50  0001 C CNN
+	1    3450 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 616A2F85
+P 3450 3450
+F 0 "#PWR0121" H 3450 3200 50  0001 C CNN
+F 1 "GND" H 3455 3277 50  0000 C CNN
+F 2 "" H 3450 3450 50  0001 C CNN
+F 3 "" H 3450 3450 50  0001 C CNN
+	1    3450 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 3150 3450 3200
+Connection ~ 3450 3150
+Wire Wire Line
+	3450 3400 3450 3450
+Text Label 700  1050 0    50   ~ 0
+3.3V_nRF
+$Comp
+L RF_Module:ESP32-WROOM-32 U3
+U 1 1 61E158C8
+P -1100 2300
+F 0 "U3" H -1100 3881 50  0000 C CNN
+F 1 "ESP32-WROOM-32" H -1100 3790 50  0000 C CNN
+F 2 "RF_Module:ESP32-WROOM-32" H -1100 800 50  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf" H -1400 2350 50  0001 C CNN
+	1    -1100 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 4800 2750 4800
+Wire Wire Line
+	3050 4700 2750 4700
+Wire Wire Line
+	3050 4500 2750 4500
+Wire Wire Line
+	2750 4400 3050 4400
+Wire Wire Line
+	3050 4200 2750 4200
+Wire Wire Line
+	2750 4300 3250 4300
+Wire Wire Line
+	3250 4300 3250 4600
+Wire Wire Line
+	2750 4600 3250 4600
+Connection ~ 3250 4600
+Wire Wire Line
+	3250 4600 3250 4750
+NoConn ~ 1550 4200
+Wire Wire Line
+	1550 4300 1050 4300
 $EndSCHEMATC
