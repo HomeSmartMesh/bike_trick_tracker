@@ -7,7 +7,7 @@ void setup(){
   
   //init the hardware bmx160  
   if (bmx160.begin() != true){
-    Serial.println("init false");
+    //Serial.println("init false");
     while(1);
   }
   //bmx160.setLowPower();   //disable the gyroscope and accelerometer sensor
@@ -42,27 +42,27 @@ void loop(){
   bmx160.getAllData(&Omagn, &Ogyro, &Oaccel);
 
   /* Display the magnetometer results (magn is magnetometer in uTesla) */
-  Serial.print("M ");
-  Serial.print("X: "); Serial.print(Omagn.x); Serial.print("  ");
-  Serial.print("Y: "); Serial.print(Omagn.y); Serial.print("  ");
-  Serial.print("Z: "); Serial.print(Omagn.z); Serial.print("  ");
-  Serial.println("uT");
+  //Serial.print("M ");
+  Serial.print("Xm: "); Serial.print(Omagn.x); Serial.print(",  ");
+  Serial.print("Ym: "); Serial.print(Omagn.y); Serial.print(",  ");
+  Serial.print("Zm: "); Serial.print(Omagn.z); Serial.print(",  ");
+  //Serial.println("uT");
 
   /* Display the gyroscope results (gyroscope data is in g) */
-  Serial.print("G ");
-  Serial.print("X: "); Serial.print(Ogyro.x); Serial.print("  ");
-  Serial.print("Y: "); Serial.print(Ogyro.y); Serial.print("  ");
-  Serial.print("Z: "); Serial.print(Ogyro.z); Serial.print("  ");
-  Serial.println("g");
+  //Serial.print("G ");
+  Serial.print("Xg: "); Serial.print(Ogyro.x); Serial.print(",  ");
+  Serial.print("Yg: "); Serial.print(Ogyro.y); Serial.print(",  ");
+  Serial.print("Zg: "); Serial.print(Ogyro.z); Serial.print(",  ");
+  //Serial.println("g");
   
   /* Display the accelerometer results (accelerometer data is in m/s^2) */
-  Serial.print("A ");
-  Serial.print("X: "); Serial.print(Oaccel.x    ); Serial.print("  ");
-  Serial.print("Y: "); Serial.print(Oaccel.y    ); Serial.print("  ");
-  Serial.print("Z: "); Serial.print(Oaccel.z    ); Serial.print("  ");
-  Serial.println("m/s^2");
+  //Serial.print("A ");
+  Serial.print("Xa: "); Serial.print(Oaccel.x); Serial.print(",  ");
+  Serial.print("Ya: "); Serial.print(Oaccel.y); Serial.print(",  ");
+  Serial.print("Za: "); Serial.print(Oaccel.z); Serial.print(",  ");
+  //Serial.println("m/s^2");
 
   Serial.println("");
 
-  delay(500);
+  delay(100);
 }
