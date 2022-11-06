@@ -10,8 +10,8 @@ DUTY_MAX ::= 1.0
 CHANGE_RATE ::= 0.01  // The amount of change every 5ms.
 
 main:
-  //buzzer := Buzzer 26
-  //buzzer.play "c1-=d1-=e1-=f1-=g1-=a1-=b1"
+  buzzer := Buzzer 26
+  buzzer.play "c1-=d1-=e1-=f1-=g1-=a1-=b1"
 
   task:: fade
   task:: read_bat
