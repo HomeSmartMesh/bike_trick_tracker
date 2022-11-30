@@ -1,0 +1,23 @@
+sdk: ^1.6.10
+prefixes:
+  host: pkg-host
+  bmx160: toit-bmx160
+  toit_dps368: toit-dps368
+  melody: toit-melody
+packages:
+  pkg-host:
+    url: github.com/toitlang/pkg-host
+    version: 1.8.1
+    hash: 7f0cc4280065fb18ee09d3803f12180cec852d32
+  toit-bmx160:
+    url: github.com/Informaticore/toit-bmx160
+    version: 0.0.1
+    hash: f453b15ef1bf9ee97fba4c4cdd92f376c484a544
+  toit-dps368:
+    url: github.com/Informaticore/toit-dps368
+    version: 1.0.0
+    hash: 87835baa086f4aea56f88f2f32a7dbe82ff304e6
+  toit-melody:
+    url: github.com/Informaticore/toit-melody
+    version: 1.0.0
+    hash: 48469adf31887f7deb4e57305f7841d92f5102d3

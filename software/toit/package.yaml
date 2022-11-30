@@ -1,0 +1,13 @@
+dependencies:
+  host:
+    url: github.com/toitlang/pkg-host
+    version: ^1.8.1
+  toit_bmx160:
+    url: github.com/Informaticore/toit-bmx160
+    version: ^0.0.1
+  toit_dps368:
+    url: github.com/Informaticore/toit-dps368
+    version: ^1.0.0
+  toit_melody:
+    url: github.com/Informaticore/toit-melody
+    version: ^1.0.0
