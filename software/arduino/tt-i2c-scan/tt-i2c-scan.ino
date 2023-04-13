@@ -3,9 +3,7 @@
 void setup()
 {
   Serial.begin (115200);  
-  pinMode(2, OUTPUT);
-  digitalWrite(2, HIGH);
-  Wire.begin (21, 22);   // sda= GPIO_21 /scl= GPIO_22
+  Wire.begin (11, 12);   // sda= GPIO_21 /scl= GPIO_22
 }
 
 void Scanner ()
@@ -36,5 +34,5 @@ void Scanner ()
 void loop()
 {
   Scanner ();
-  delay (100);
+  delay (1000);
 }

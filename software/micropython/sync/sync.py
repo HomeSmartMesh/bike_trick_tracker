@@ -10,11 +10,13 @@ STRUCTURE = {
         'lib': {
             'app': {
                 'base': BASE_DIR + 'app',
-                'dirs': ['bmx160', 'drivers'],
+                'dirs': ['dps368', 'bmx160', 'drivers'],
                 'files': [
                     'main.py',
-                    # 'bmx160/bmx160_driver.py',
-                    # 'bmx160/constants.py',
+                    'i2c.py',
+                    'bmx160/bmx160_driver.py',
+                    'bmx160/constants.py',
+                    'dps368/dps368_driver.py',
                     'drivers/sdcard.py'
                 ],
             }
@@ -77,6 +79,8 @@ def main(argv):
     # print(dir_cmd)
     # print(file_cmd)
     # print("")
+    print("Command:")
+    print("")
     print(cmd)
 
     subprocess.run(['mpfshell', port, '-n', '-c', cmd])

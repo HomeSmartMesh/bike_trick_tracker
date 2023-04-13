@@ -21,19 +21,19 @@ g_TO_METERS_PER_SECOND_SQUARED = 1/9.80665 # in m/s^2
 AccelSensitivity2Gravity = const(16384)  # accelerometer sensitivity. See Section 1.2, Table 2
 GyroSensitivity2DegPerSec = 131.2        # gyroscope sensitivity. See Section 1.2, Table 3
 
-class _ScaledReadOnlyStruct(Struct):
-    def __init__(self, register_address, struct_format, scale):
-        super(_ScaledReadOnlyStruct, self).__init__(
-            register_address, struct_format)
-        self.scale = scale
+# class _ScaledReadOnlyStruct(Struct):
+#     def __init__(self, register_address, struct_format, scale):
+#         super(_ScaledReadOnlyStruct, self).__init__(
+#             register_address, struct_format)
+#         self.scale = scale
 
-    # NOTE: I think super() may be an allocating operation.
-    def __get__(self, obj, objtype=None):
-        result = super(_ScaledReadOnlyStruct, self).__get__(obj, objtype)
-        return tuple(self.scale * v for v in result)
+#     # NOTE: I think super() may be an allocating operation.
+#     def __get__(self, obj, objtype=None):
+#         result = super(_ScaledReadOnlyStruct, self).__get__(obj, objtype)
+#         return tuple(self.scale * v for v in result)
 
-    def __set__(self, obj, value):
-        raise NotImplementedError()
+#     def __set__(self, obj, value):
+#         raise NotImplementedError()
 
 
 # TODO replace _SclaedReadOnlyStruct with Struct in BMX160 so that the
@@ -116,12 +116,13 @@ class BMX160:
     _mag_range = 250 # deg/sec
 
 
-    def __init__(self):
+    def __init__(self, i2c):
+        self.i2c = i2c
         # soft reset & reboot
         self.cmd = constants.BMX160_SOFT_RESET_CMD
         time.sleep(constants.BMX160_SOFT_RESET_DELAY)
         # Check ID registers.
-        ID = self.read_u8(constants.BMX160_CHIP_ID_ADDR)
+        ID = self.i2c.read(constants.BMX160_I2C_ADDR, constants.BMX160_CHIP_ID_ADDR)
         if ID != constants.BMX160_CHIP_ID:
             raise RuntimeError('Could not find BMX160, check wiring!')
 
@@ -135,7 +136,7 @@ class BMX160:
     ######################## SENSOR API ########################
 
     def read_all(self):
-        return self.read_bytes(constants.BMX160_MAG_DATA_ADDR, 20, self._BUFFER)
+        return self.i2c.read(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_DATA_ADDR, 20, self._BUFFER)
 
     # synonymous
     @property
@@ -167,7 +168,7 @@ class BMX160:
 
     @property
     def sensortime(self):
-        tbuf = self.read_bytes(constants.BMX160_SENSOR_TIME_ADDR, 3, self._smallbuf)
+        tbuf = self.i2c.read(constants.BMX160_I2C_ADDR, constants.BMX160_SENSOR_TIME_ADDR, 3, self._smallbuf)
         t0, t1, t2 = tbuf[:3]
         t = (t2 << 16) | (t1 << 8) | t0
         t *= 0.000039 # the time resolution is 39 microseconds
@@ -255,7 +256,7 @@ class BMX160:
             print("Unknown gyroscope powermode: " + str(powermode))
             return
 
-        self.write_u8(constants.BMX160_COMMAND_REG_ADDR, powermode)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_COMMAND_REG_ADDR, powermode)
         if int(self.query_error) == 0:
             self._gyro_powermode = powermode
         else:
@@ -338,7 +339,7 @@ class BMX160:
             print("Unknown accelerometer power mode: " + str(powermode))
             return
 
-        self.write_u8(constants.BMX160_COMMAND_REG_ADDR, powermode)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_COMMAND_REG_ADDR, powermode)
         if int(self.query_error) == 0:
             self._accel_powermode = powermode
         else:
@@ -352,27 +353,27 @@ class BMX160:
 
     def init_mag(self):
         # see pg 25 of: https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMX160-DS000.pdf
-        self.write_u8(constants.BMX160_COMMAND_REG_ADDR, constants.BMX160_MAG_NORMAL_MODE)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_COMMAND_REG_ADDR, constants.BMX160_MAG_NORMAL_MODE)
         time.sleep(0.00065) # datasheet says wait for 650microsec
-        self.write_u8(constants.BMX160_MAG_IF_0_ADDR, 0x80)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_0_ADDR, 0x80)
         # put mag into sleep mode
-        self.write_u8(constants.BMX160_MAG_IF_3_ADDR, 0x01)
-        self.write_u8(constants.BMX160_MAG_IF_2_ADDR, 0x4B)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_3_ADDR, 0x01)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_2_ADDR, 0x4B)
         # set x-y to regular power preset
-        self.write_u8(constants.BMX160_MAG_IF_3_ADDR, 0x04)
-        self.write_u8(constants.BMX160_MAG_IF_2_ADDR, 0x51)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_3_ADDR, 0x04)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_2_ADDR, 0x51)
         # set z to regular preset
-        self.write_u8(constants.BMX160_MAG_IF_3_ADDR, 0x0E)
-        self.write_u8(constants.BMX160_MAG_IF_2_ADDR, 0x52)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_3_ADDR, 0x0E)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_2_ADDR, 0x52)
         # prepare MAG_IF[1-3] for mag_if data mode
-        self.write_u8(constants.BMX160_MAG_IF_3_ADDR, 0x02)
-        self.write_u8(constants.BMX160_MAG_IF_2_ADDR, 0x4C)
-        self.write_u8(constants.BMX160_MAG_IF_1_ADDR, 0x42)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_3_ADDR, 0x02)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_2_ADDR, 0x4C)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_1_ADDR, 0x42)
         # Set ODR to 25 Hz
-        self.write_u8(constants.BMX160_MAG_ODR_ADDR, constants.BMX160_MAG_ODR_25HZ)
-        self.write_u8(constants.BMX160_MAG_IF_0_ADDR, 0x00)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_ODR_ADDR, constants.BMX160_MAG_ODR_25HZ)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_MAG_IF_0_ADDR, 0x00)
         # put in low power mode.
-        self.write_u8(constants.BMX160_COMMAND_REG_ADDR, constants.BMX160_MAG_LOWPOWER_MODE)
+        self.i2c.write(constants.BMX160_I2C_ADDR, constants.BMX160_COMMAND_REG_ADDR, constants.BMX160_MAG_LOWPOWER_MODE)
         time.sleep(0.1) # takes this long to warm up (empirically)
 
 
@@ -381,7 +382,7 @@ class BMX160:
         i = find_nearest_valid(desired, possible_values)
         rounded = possible_values[i]
         bmxconst = bmx_constants[i]
-        self.write_u8(config_addr, bmxconst)
+        self.i2c.write(constants.BMX160_I2C_ADDR, config_addr, bmxconst)
         e = self.error_code
 
         if e == constants.BMX160_OK:
@@ -390,28 +391,28 @@ class BMX160:
             settingswarning(warning_interp)
 
 
-class BMX160_I2C(BMX160):
-    """Driver for the BMX160 connect over I2C."""
+# class BMX160_I2C(BMX160):
+#     """Driver for the BMX160 connect over I2C."""
 
-    def __init__(self, i2c):
-        self.i2c = i2c
-        self.i2c.init(i2c.PERIPHERAL, addr=constants.BMX160_I2C_ADDR)
-        super().__init__()
+#     def __init__(self, i2c):
+#         self.i2c = i2c
+#         self.i2c.init(i2c.PERIPHERAL, addr=constants.BMX160_I2C_ADDR)
+#         super().__init__()
 
-    def read_u8(self, address):
-        self._BUFFER[0] = address & 0xFF
-        self.i2c.write_then_readinto(self._BUFFER, self._BUFFER, out_end=1, in_start=1, in_end=2)
-        return self._BUFFER[1]
+#     def read_u8(self, address):
+#         self._BUFFER[0] = address & 0xFF
+#         self.i2c.write_then_readinto(self._BUFFER, self._BUFFER, out_end=1, in_start=1, in_end=2)
+#         return self._BUFFER[1]
 
-    def read_bytes(self, address, count, buf):
-        buf[0] = address & 0xFF
-        self.i2c.write_then_readinto(buf, buf, out_end=1, in_end=count)
-        return buf
+#     def read_bytes(self, address, count, buf):
+#         buf[0] = address & 0xFF
+#         self.i2c.write_then_readinto(buf, buf, out_end=1, in_end=count)
+#         return buf
 
-    def write_u8(self, address, val):
-        self._BUFFER[0] = address & 0xFF
-        self._BUFFER[1] = val & 0xFF
-        self.i2c.write(self._BUFFER, end=2, stop=True)
+#     def write_u8(self, address, val):
+#         self._BUFFER[0] = address & 0xFF
+#         self._BUFFER[1] = val & 0xFF
+#         self.i2c.write(self._BUFFER, end=2, stop=True)
 
 
 # GENERIC UTILS:
